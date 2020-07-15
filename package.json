@@ -4,7 +4,8 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "prettier --write ."
   },
   "dependencies": {
     "fannypack": "^4.21.36",
@@ -19,6 +20,7 @@
     "@types/react-dom": "16.8.4",
     "@types/styled-components": "5.0.1",
     "babel-plugin-styled-components": "^1.10.0",
+    "prettier": "^2.0.5",
     "typescript": "3.5.2"
   },
   "license": "ISC"

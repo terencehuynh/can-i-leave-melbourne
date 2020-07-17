@@ -1,14 +1,7 @@
 import React from 'react'
 import { AppProps } from 'next/app'
 import { ThemeProvider } from 'fannypack'
-
-const theme = {
-  palette: {
-    yellow: '#FFEA00',
-    warningBg: '#263238',
-    warningHover: '#37474f',
-  },
-}
+import theme from '../utils/theme'
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (

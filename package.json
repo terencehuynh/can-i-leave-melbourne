@@ -12,8 +12,7 @@
     "fannypack": "^4.21.36",
     "next": "latest",
     "react": "^16.13.0",
-    "react-dom": "^16.13.0",
-    "styled-components": "^5.0.0"
+    "react-dom": "^16.13.0"
   },
   "devDependencies": {
     "@types/node": "12.0.12",

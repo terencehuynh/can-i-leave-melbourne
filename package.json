@@ -1,5 +1,5 @@
 {
-  "name": "with-typescript-styled-components",
+  "name": "can-i-leave-melbourne",
   "version": "1.0.0",
   "scripts": {
     "dev": "next",
@@ -10,9 +10,12 @@
   },
   "dependencies": {
     "fannypack": "^4.21.36",
+    "gray-matter": "^4.0.2",
     "next": "latest",
+    "raw-loader": "^4.0.1",
     "react": "^16.13.0",
-    "react-dom": "^16.13.0"
+    "react-dom": "^16.13.0",
+    "react-markdown": "^4.3.1"
   },
   "devDependencies": {
     "@types/node": "12.0.12",
@@ -21,7 +24,7 @@
     "@types/styled-components": "5.0.1",
     "babel-plugin-styled-components": "^1.10.0",
     "prettier": "^2.0.5",
-    "typescript": "3.5.2"
+    "typescript": "3.9.6"
   },
   "license": "ISC"
 }

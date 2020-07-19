@@ -1,5 +1,5 @@
 import React from 'react'
-import { Icon, Paragraph, Link, styled, theme } from 'fannypack'
+import { Icon, Link, styled, theme } from 'fannypack'
 
 import { Wrapper as _Wrapper, Container as _Container } from './Common'
 import FooterSocial from './FooterSocial'

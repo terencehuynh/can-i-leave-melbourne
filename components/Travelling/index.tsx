@@ -38,9 +38,9 @@ const Travelling = ({ locations }: TravellingProps) => {
       <Container>
         <h2>Looking to Travel?</h2>
         <Tldr>
-          You cannot travel interstate due to border restrictions imposed on
-          Victorians. You cannot travel internationally because the Australian
-          Government has banned it.
+          Unless you are an essential traveller, Victorians cannot travel
+          interstate due to border restrictions placed by other states and
+          territories. Australian citizens cannot travel abroad.
         </Tldr>
         <LocationsList>
           {locations.map(

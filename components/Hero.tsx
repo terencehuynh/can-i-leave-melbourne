@@ -128,9 +128,9 @@ const Hero = () => {
       <Content>
         <BigScreamingLetters>No</BigScreamingLetters>
         <Status>
-          Wear a mask. Wash your hands. <strong>Stay the f**k at home.</strong>
+          Wear a mask. Wash your hands. <strong>Stay at home.</strong>
         </Status>
-        <Button href="#">Where can I go?</Button>
+        <Button href="#going-outside">Where can I go?</Button>
       </Content>
     </Wrapper>
   )

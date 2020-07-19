@@ -2,6 +2,11 @@ import {
   faHeart,
   faCoffee,
   faTimesCircle,
+  faShoppingBag,
+  faBriefcase,
+  faRunning,
+  faClinicMedical,
+  faHandsHelping,
 } from '@fortawesome/free-solid-svg-icons'
 import {
   faTwitter,
@@ -31,7 +36,16 @@ const theme: CILMThemeConfig = {
   Icon: {
     iconSets: [
       {
-        icons: [faHeart, faCoffee, faTimesCircle],
+        icons: [
+          faHeart,
+          faCoffee,
+          faTimesCircle,
+          faShoppingBag,
+          faRunning,
+          faClinicMedical,
+          faBriefcase,
+          faHandsHelping,
+        ],
         prefix: 'solid-',
         type: 'font-awesome',
       },

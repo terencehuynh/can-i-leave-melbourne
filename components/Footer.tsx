@@ -66,7 +66,7 @@ const Footer = () => {
           </p>
           <p>
             Built with <Link href="https://fannypack.style">Fannypack</Link> and{' '}
-            <Link href="https://www.gatsbyjs.org/">Gatsby</Link>
+            <Link href="https://nextjs.org/">Next.js</Link>
           </p>
         </FooterCredits>
       </Container>

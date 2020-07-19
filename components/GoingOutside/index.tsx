@@ -51,7 +51,7 @@ const GoingOutside = () => {
       <Container>
         <h2 id="going-outside">Going outside?</h2>
         <Paragraph>
-          There are the <strong>only reasons</strong> when you can leave home:
+          These are the <strong>only reasons</strong> when you can leave home:
         </Paragraph>
         <Disclaimer>
           Clicking/tapping on one of the reasons will take you to the relevant

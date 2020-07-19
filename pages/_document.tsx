@@ -38,6 +38,19 @@ export default class MyDocument extends Document {
       <html lang="en">
         <Head key="head-in-doc">
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+          <title>Can I Leave Melbourne?</title>
+          <meta property="og:title" content="Can I Leave Melbourne?" />
+          <meta property="og:description" content="canileave.melbourne" />
+          <meta property="og:url" content="https://canileave.melbourne" />
+          <meta
+            property="og:image"
+            content="https://canileave.melbourne/img/og-image-no.png"
+          />
+          <meta property="og:type" content="website" />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:title" content="Can I Leave Melbourne?" />
+          <meta name="twitter:description" content="canileave.melbourne" />
+          <meta name="twitter:creator" content="@terencehuynh" />
         </Head>
         <body>
           <Main />

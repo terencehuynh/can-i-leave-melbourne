@@ -43,7 +43,7 @@ const GoingOutside = () => {
         <ReasonsList>
           <ReasonCardItem
             icon="solid-shopping-bag"
-            name="Shopping for food and other essentials"
+            name="Shopping for food (including take-away) and other essentials"
             link="https://www.dhhs.vic.gov.au/shopping-and-retail-metropolitan-melbourne-and-mitchell-shire-covid-19"
           />
           <ReasonCardItem

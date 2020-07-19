@@ -51,7 +51,7 @@ const FooterSocial = () => (
       <ListItem
         name="GitHub"
         icon="brand-github"
-        link="https://github.com/terencehuynh/can-i-leave-melb"
+        link="https://github.com/terencehuynh/can-i-leave-melbourne"
       />
       <ListItem
         name="Twitter"

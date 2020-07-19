@@ -11,12 +11,12 @@ export const ReasonsList = styled.ul`
   display: grid;
   list-style: none;
   margin: 0 0 24px;
-  padding; 0;
+  padding: 0;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 16px;
 
   @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
-    grid-template-columns: repeat(1, 1fr)
+    grid-template-columns: repeat(1, 1fr);
   }
 `
 

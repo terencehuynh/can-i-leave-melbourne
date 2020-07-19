@@ -1,5 +1,5 @@
 import React from 'react'
-import { Icon, styled, theme, palette } from 'fannypack'
+import { styled, theme } from 'fannypack'
 import { Wrapper as _Wrapper, Container } from '../Common'
 import { ReasonsList, ReasonCardItem } from './ReasonsList'
 

@@ -46,7 +46,7 @@ const Disclaimer = () => {
         </p>
         <p>
           This information is also <strong>not legal advice</strong> if you are
-          fined for breaching health directions.
+          fined or arrested for breaching health directions.
         </p>
       </Container>
     </Wrapper>

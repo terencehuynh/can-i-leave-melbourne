@@ -17,7 +17,7 @@ const Paragraph = styled.p`
 
   @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
     font-size: 1rem;
-    line-height: 1.125rem;
+    line-height: 1.5rem;
     font-weight: 400;
     margin: 0 0 16px;
     text-align: left;

@@ -1,14 +1,14 @@
 import { theme, styled } from 'fannypack'
 
 export const Wrapper = styled.div`
-  padding: 48px 10px;
+  padding: 48px 16px;
 
   @media (max-width: ${theme('fannypack.layout.tabletBreakpoint')}px) {
-    padding: 36px 10px;
+    padding: 36px 16px;
   }
 
   @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
-    padding: 24px 10px;
+    padding: 24px 16px;
   }
 `
 

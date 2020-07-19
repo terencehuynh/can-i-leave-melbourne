@@ -1,5 +1,6 @@
 import React from 'react'
 import { styled, palette, theme } from 'fannypack'
+import { Container as _Container } from './Common'
 
 const Wrapper = styled.div`
   position: relative;
@@ -38,9 +39,9 @@ const Header = styled.header`
   }
 `
 
-const Content = styled.div`
+const Container = styled(_Container)`
   min-height: calc(80vh - 64px);
-  padding: 10px;
+  padding: 0 16px;
   align-items: center;
   justify-content: center;
   display: flex;
@@ -125,13 +126,13 @@ const Hero = () => {
       <Header>
         <h1>Can I Leave Melbourne?</h1>
       </Header>
-      <Content>
+      <Container>
         <BigScreamingLetters>No</BigScreamingLetters>
         <Status>
           Wear a mask. Wash your hands. <strong>Stay at home.</strong>
         </Status>
         <Button href="#going-outside">Where can I go?</Button>
-      </Content>
+      </Container>
     </Wrapper>
   )
 }

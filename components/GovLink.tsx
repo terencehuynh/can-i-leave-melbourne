@@ -5,7 +5,7 @@ const StyledLink = styled.a`
   background: ${palette('warningBg')};
   color: ${palette('yellow')};
   display: flex;
-  padding: 16px 10px;
+  padding: 16px;
   text-decoration: none;
   font-size: 1rem;
   font-weight: 600;

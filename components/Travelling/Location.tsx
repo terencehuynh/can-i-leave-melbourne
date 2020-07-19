@@ -59,6 +59,7 @@ const Header = styled.div<VisibleProp>`
 
   svg {
     margin-right: 10px;
+    font-size: 1.5rem;
   }
 `
 
@@ -103,13 +104,14 @@ const LocationContent = styled.div`
 
 const Location: React.FC<LocationProps> = ({ title, status, content }) => {
   const palette = status === 'NO' ? 'danger' : 'success'
+  const icon = status === 'NO' ? 'solid-times-circle' : 'success'
   return (
     <Hidden.Container>
       {(hidden) => (
         <Wrapper {...hidden} palette={palette}>
           <Hidden.Toggle {...hidden} use={Header} palette={palette}>
             <h3>
-              <Icon a11yLabel="Disclaimer" icon="danger" size="16" />
+              <Icon a11yLabel="Status" icon={icon} />
               {title}
             </h3>
           </Hidden.Toggle>

@@ -2,6 +2,8 @@ import React from 'react'
 import Hero from '../components/Hero'
 import Warning from '../components/Warning'
 import Travelling from '../components/Travelling'
+import Footer from '../components/Footer'
+
 import { TRAVELLING_LIST } from '../constants'
 
 import { getLocationMarkdown, LocationMarkdown } from '../utils/content'
@@ -16,6 +18,7 @@ const Home: React.FC<HomeProps> = ({ locations }) => {
       <Hero />
       <Warning />
       <Travelling locations={locations} />
+      <Footer />
     </>
   )
 }

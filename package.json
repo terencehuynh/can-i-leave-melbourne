@@ -9,6 +9,7 @@
     "lint": "prettier --write ."
   },
   "dependencies": {
+    "@fortawesome/free-brands-svg-icons": "^5.14.0",
     "fannypack": "^4.21.36",
     "gray-matter": "^4.0.2",
     "next": "latest",

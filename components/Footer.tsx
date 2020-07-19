@@ -35,10 +35,19 @@ const FooterCredits = styled.div`
     }
   }
 
+  p.long-divide {
+    margin-top: 24px;
+  }
+
   a {
     font-weight: 600;
     text-decoration: none;
     color: #718196;
+  }
+
+  a svg {
+    height: auto;
+    margin-right: 4px;
   }
 
   a:hover {
@@ -67,6 +76,14 @@ const Footer = () => {
           <p>
             Built with <Link href="https://fannypack.style">Fannypack</Link> and{' '}
             <Link href="https://nextjs.org/">Next.js</Link>
+          </p>
+          <p className="long-divide">
+            Like this site? Consider{' '}
+            <a href="https://buymeacoffee.com/terencehuynh">
+              <Icon a11yHidden={true} icon="solid-coffee" />
+              buying me a coffee
+            </a>
+            .
           </p>
         </FooterCredits>
       </Container>

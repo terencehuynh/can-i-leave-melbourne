@@ -68,11 +68,6 @@ const FooterSocial = () => (
         icon="brand-linkedin-in"
         link="https://www.linkedin.com/in/terencehuynh/"
       />
-      <ListItem
-        name="Buy Me A Coffee"
-        icon="solid-coffee"
-        link="https://www.buymeacoffee.com/terencehuynh"
-      />
     </List>
   </Navigation>
 )

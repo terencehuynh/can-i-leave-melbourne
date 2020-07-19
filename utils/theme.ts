@@ -16,6 +16,7 @@ import {
   faInstagram,
   faLinkedinIn,
   faGithub,
+  faCreativeCommons,
 } from '@fortawesome/free-brands-svg-icons'
 
 import { ThemeConfig, PaletteThemeConfig } from 'fannypack/types'
@@ -56,7 +57,13 @@ const theme: CILMThemeConfig = {
         type: 'font-awesome',
       },
       {
-        icons: [faTwitter, faInstagram, faLinkedinIn, faGithub],
+        icons: [
+          faTwitter,
+          faInstagram,
+          faLinkedinIn,
+          faGithub,
+          faCreativeCommons,
+        ],
         prefix: 'brand-',
         type: 'font-awesome',
       },

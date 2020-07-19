@@ -7,6 +7,9 @@ import {
   faRunning,
   faClinicMedical,
   faHandsHelping,
+  faRing,
+  faPlaceOfWorship,
+  faExclamation,
 } from '@fortawesome/free-solid-svg-icons'
 import {
   faTwitter,
@@ -45,6 +48,9 @@ const theme: CILMThemeConfig = {
           faClinicMedical,
           faBriefcase,
           faHandsHelping,
+          faRing,
+          faPlaceOfWorship,
+          faExclamation,
         ],
         prefix: 'solid-',
         type: 'font-awesome',

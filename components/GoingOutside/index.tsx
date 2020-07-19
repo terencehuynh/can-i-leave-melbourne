@@ -60,7 +60,7 @@ const GoingOutside = () => {
         <ReasonsList>
           <ReasonCardItem
             icon="solid-shopping-bag"
-            name="Shopping for food (including take-away) and other essentials"
+            name="Shopping for food (including take-away) and other essentials in your local area"
             link="https://www.dhhs.vic.gov.au/shopping-and-retail-metropolitan-melbourne-and-mitchell-shire-covid-19"
           />
           <ReasonCardItem
@@ -70,18 +70,33 @@ const GoingOutside = () => {
           />
           <ReasonCardItem
             icon="solid-running"
-            name="Exercise outside (with only one other person or members of your household)"
+            name="Exercise outside in your local area (with only one other person or your household)"
             link="https://www.dhhs.vic.gov.au/sport-and-exercise-metropolitan-melbourne-and-mitchell-shire-covid-19"
           />
           <ReasonCardItem
             icon="solid-clinic-medical"
-            name="Access medical services and going for treatment"
+            name="Access medical services, or visiting a doctor or health professional"
             link="https://www.dhhs.vic.gov.au/stay-home-metropolitan-melbourne-and-mitchell-shire-covid-19#access-medical-services"
           />
           <ReasonCardItem
+            icon="solid-ring"
+            name="Getting married; or being a witness or the celebrant of a wedding"
+            link="https://www.dhhs.vic.gov.au/religion-and-ceremony-metropolitan-melbourne-and-mitchell-shire-covid-19#can-i-attend-a-wedding"
+          />
+          <ReasonCardItem
+            icon="solid-place-of-worship"
+            name="Attending a funeral (whilst maintaining social distancing)"
+            link="https://www.dhhs.vic.gov.au/religion-and-ceremony-metropolitan-melbourne-and-mitchell-shire-covid-19#summary-of-restrictions"
+          />
+          <ReasonCardItem
             icon="solid-hands-helping"
-            name="Providing caregiving or on compassionate grounds"
+            name="Providing caregiving or on compassionate reasons"
             link="https://www.dhhs.vic.gov.au/stay-home-metropolitan-melbourne-and-mitchell-shire-covid-19#caregiving-or-compassionate-reasons"
+          />
+          <ReasonCardItem
+            icon="solid-exclamation"
+            name="When your life is in danger, or it is an emergency"
+            link="https://www.dhhs.vic.gov.au/stay-home-metropolitan-melbourne-and-mitchell-shire-covid-19#are-there-any-other-special-reasons-that-allow-me-to-leave-my-home"
           />
         </ReasonsList>
         <Paragraph>

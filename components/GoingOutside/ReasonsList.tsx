@@ -32,6 +32,13 @@ const ReasonsCard = styled.li`
   position: relative;
   padding: 0;
   background: white;
+  display: flex;
+
+  p {
+    flex: 1;
+    display: block;
+    margin: 0;
+  }
 
   a span.read-more {
     display: block;
@@ -63,7 +70,8 @@ const ReasonsCard = styled.li`
   }
 
   a {
-    display: block;
+    display: flex;
+    flex-direction: column;
     border-top: 5px solid ${palette('info300')};
     padding: calc(8px + 24px) 16px 16px;
     text-decoration: none;
@@ -95,8 +103,7 @@ export const ReasonCardItem: React.FC<ReasonCardItemProps> = ({
         <span className="icon">
           <Icon icon={icon} a11yHidden={true} />
         </span>
-        {name}
-
+        <p>{name}</p>
         <span className="read-more">Click for more info</span>
       </a>
     </ReasonsCard>

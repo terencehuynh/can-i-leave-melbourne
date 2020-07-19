@@ -59,8 +59,7 @@ const Travelling = ({ locations }: TravellingProps) => {
           )}
         </LocationsList>
         <Disclaimer>
-          Information might be out-of-date since it was last updated. It is
-          strongly urged you visit the relevant authority's website to
+          It is strongly urged you visit the relevant authority's website to
           re-confirm the information.
         </Disclaimer>
       </Container>

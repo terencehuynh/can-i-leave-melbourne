@@ -1,7 +1,7 @@
 import React from 'react'
 import { Icon, styled, palette, theme } from 'fannypack'
 
-const WarningLink = styled.a`
+const StyledLink = styled.a`
   background: ${palette('warningBg')};
   color: ${palette('yellow')};
   display: flex;
@@ -33,16 +33,16 @@ const WarningLink = styled.a`
   }
 `
 
-const Warning = () => {
+const GovLink = () => {
   return (
-    <WarningLink href="https://www.dhhs.vic.gov.au/coronavirus" target="_blank">
+    <StyledLink href="https://www.dhhs.vic.gov.au/coronavirus" target="_blank">
       <span>
         <Icon a11yLabel="Disclaimer" icon="danger" size="16" />
         Click here for for up-to-date information about COVID-19 from the
         Victorian Government.
       </span>
-    </WarningLink>
+    </StyledLink>
   )
 }
 
-export default Warning
+export default GovLink

@@ -54,8 +54,8 @@ const GoingOutside = () => {
           These are the <strong>only reasons</strong> when you can leave home:
         </Paragraph>
         <Disclaimer>
-          Clicking/tapping on one of the reasons will take you to the relevant
-          Department of Health and Human Services page.
+          Clicking on one of the reasons will take you to the relevant page or
+          section on the Department of Health and Human Services website.
         </Disclaimer>
         <ReasonsList>
           <ReasonCardItem

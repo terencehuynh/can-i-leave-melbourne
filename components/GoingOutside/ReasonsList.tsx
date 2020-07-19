@@ -71,6 +71,7 @@ const ReasonsCard = styled.li`
 
   a {
     display: flex;
+    flex: 1;
     flex-direction: column;
     border-top: 5px solid ${palette('info300')};
     padding: calc(8px + 24px) 16px 16px;

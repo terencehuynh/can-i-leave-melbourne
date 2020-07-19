@@ -47,9 +47,8 @@ const Travelling = ({ locations }: TravellingProps) => {
           {locations.map(
             ({ content, meta }: LocationMarkdown, index: number) => {
               return (
-                <div>
+                <div key={index}>
                   <Location
-                    key={index}
                     title={meta?.title}
                     status={meta?.status}
                     content={content}
@@ -60,10 +59,9 @@ const Travelling = ({ locations }: TravellingProps) => {
           )}
         </LocationsList>
         <Disclaimer>
-          Please note, while every effort has been made to ensure this is
-          factual information, this website is not and does not replace official
-          government advice. Information may have changed and it is strongly
-          advised you re-confirm the information provided before leaving.
+          Information might be out-of-date since it was last updated. It is
+          strongly urged you visit the relevant authority's website to
+          re-confirm the information.
         </Disclaimer>
       </Container>
     </Wrapper>

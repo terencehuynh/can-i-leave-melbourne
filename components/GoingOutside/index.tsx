@@ -32,6 +32,19 @@ const Paragraph = styled.p`
   }
 `
 
+const Disclaimer = styled.p`
+  margin: 0 auto 36px;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  text-align: center;
+  max-width: 800px;
+  opacity: 0.5;
+  @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
+    margin: 0 0 24px;
+    text-align: left;
+  }
+`
+
 const GoingOutside = () => {
   return (
     <Wrapper>
@@ -40,6 +53,10 @@ const GoingOutside = () => {
         <Paragraph>
           There are the <strong>only reasons</strong> when you can leave home:
         </Paragraph>
+        <Disclaimer>
+          Clicking/tapping on one of the reasons will take you to the relevant
+          Department of Health and Human Services page.
+        </Disclaimer>
         <ReasonsList>
           <ReasonCardItem
             icon="solid-shopping-bag"

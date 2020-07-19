@@ -15,6 +15,10 @@ export const ReasonsList = styled.ul`
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 16px;
 
+  @media (max-width: ${theme('fannypack.layout.tabletBreakpoint')}px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
     grid-template-columns: repeat(1, 1fr);
   }
@@ -29,7 +33,17 @@ const ReasonsCard = styled.li`
   padding: 0;
   background: white;
 
-  span {
+  a span.read-more {
+    display: block;
+    margin-top: 16px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: ${palette('gray100')};
+  }
+
+  span.icon {
     position: absolute;
     left: 0;
     right: 0;
@@ -61,8 +75,11 @@ const ReasonsCard = styled.li`
 
   a:hover {
     border-top-color: ${palette('info600')};
-    span {
+    span.icon {
       background: ${palette('info600')};
+    }
+    span.read-more {
+      color: ${palette('info600')};
     }
   }
 `
@@ -74,11 +91,13 @@ export const ReasonCardItem: React.FC<ReasonCardItemProps> = ({
 }) => {
   return (
     <ReasonsCard>
-      <a href={link}>
-        <span>
+      <a href={link} target="_blank">
+        <span className="icon">
           <Icon icon={icon} a11yHidden={true} />
         </span>
         {name}
+
+        <span className="read-more">Click for more info</span>
       </a>
     </ReasonsCard>
   )

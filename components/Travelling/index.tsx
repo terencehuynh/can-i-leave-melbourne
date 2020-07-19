@@ -13,7 +13,8 @@ export type TravellingProps = {
 const Disclaimer = styled.p`
   margin: 24px auto 0;
   font-size: 0.875rem;
-  line-height: 1.125rem;
+  line-height: 1.5rem;
+  opacity: 0.5;
   text-align: center;
   max-width: 800px;
 

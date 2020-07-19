@@ -46,10 +46,17 @@ export default class MyDocument extends Document {
             property="og:image"
             content="https://canileave.melbourne/img/og-image-no.png"
           />
+          <meta property="og:image:width" content="1200" />
+          <meta property="og:image:height" content="630" />
           <meta property="og:type" content="website" />
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:title" content="Can I Leave Melbourne?" />
           <meta name="twitter:description" content="canileave.melbourne" />
+          <meta
+            name="twitter:image"
+            content="https://canileave.melbourne/img/og-image-no.png"
+          />
+          <meta name="twitter:image:alt" content="Can I Leave Melbourne?" />
           <meta name="twitter:creator" content="@terencehuynh" />
         </Head>
         <body>

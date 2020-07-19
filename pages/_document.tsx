@@ -40,7 +40,10 @@ export default class MyDocument extends Document {
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
           <title>Can I Leave Melbourne?</title>
           <meta property="og:title" content="Can I Leave Melbourne?" />
-          <meta property="og:description" content="canileave.melbourne" />
+          <meta
+            property="og:description"
+            content="Wear a mask. Wash your hands. Stay at home."
+          />
           <meta property="og:url" content="https://canileave.melbourne" />
           <meta
             property="og:image"
@@ -51,7 +54,10 @@ export default class MyDocument extends Document {
           <meta property="og:type" content="website" />
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:title" content="Can I Leave Melbourne?" />
-          <meta name="twitter:description" content="canileave.melbourne" />
+          <meta
+            name="twitter:description"
+            content="Wear a mask. Wash your hands. Stay at home."
+          />
           <meta
             name="twitter:image"
             content="https://canileave.melbourne/img/og-image-no.png"

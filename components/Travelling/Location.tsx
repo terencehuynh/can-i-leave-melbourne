@@ -17,7 +17,7 @@ const Wrapper = styled.div<VisibleProp>`
   border-radius: 4px;
   padding: 14px;
   border: 2px solid ${(props) => props.baseColor};
-  background: ${(props) => (props.visible ? props.baseColor : 'white')};
+  background: ${(props) => (props.visible ? 'white' : props.baseColor)};
 `
 
 const Header = styled.div<VisibleProp>`

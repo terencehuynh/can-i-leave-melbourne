@@ -1,5 +1,5 @@
 import React from 'react'
-import { styled, theme } from 'fannypack'
+import { styled, breakpoint, css } from 'bumbag'
 import { Wrapper as _Wrapper, Container } from '../Common'
 import { ReasonsList, ReasonCardItem } from './ReasonsList'
 
@@ -9,19 +9,22 @@ const Wrapper = styled(_Wrapper)`
 `
 
 const Paragraph = styled.p`
-  font-size: 1.3125rem;
-  font-weight: 300;
-  line-height: 1.75rem;
-  margin: 0 0 24px;
-  text-align: center;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 400;
+  margin: 0 0 16px;
+  text-align: left;
 
-  @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
-    font-size: 1rem;
-    line-height: 1.5rem;
-    font-weight: 400;
-    margin: 0 0 16px;
-    text-align: left;
-  }
+  ${breakpoint(
+    'min-tablet',
+    css`
+      font-size: 1.3125rem;
+      font-weight: 300;
+      line-height: 1.75rem;
+      margin: 0 0 24px;
+      text-align: center;
+    `
+  )}
 
   &:last-child {
     margin: 0;
@@ -33,16 +36,20 @@ const Paragraph = styled.p`
 `
 
 const Disclaimer = styled.p`
-  margin: 0 auto 36px;
+  margin: 0 0 24px;
+  text-align: left;
   font-size: 0.875rem;
   line-height: 1.5rem;
-  text-align: center;
   max-width: 800px;
   opacity: 0.5;
-  @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
-    margin: 0 0 24px;
-    text-align: left;
-  }
+
+  ${breakpoint(
+    'min-tablet',
+    css`
+      margin: 0 auto 36px;
+      text-align: center;
+    `
+  )}
 `
 
 const GoingOutside = () => {

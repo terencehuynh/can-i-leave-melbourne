@@ -1,5 +1,5 @@
 import React from 'react'
-import { styled, palette, theme } from 'fannypack'
+import { styled, palette, breakpoint, css } from 'bumbag'
 import { Container as _Container } from './Common'
 
 const Wrapper = styled.div`
@@ -40,7 +40,8 @@ const Header = styled.header`
 `
 
 const Container = styled(_Container)`
-  min-height: calc(80vh - 64px);
+  min-height: calc(90vh - 64px);
+  max-height: 600px;
   padding: 0 16px;
   align-items: center;
   justify-content: center;
@@ -49,10 +50,13 @@ const Container = styled(_Container)`
   z-index: 10;
   position: relative;
 
-  @media (max-width: ${theme('fannypack.layout.tabletBreakpoint')}px) {
-    min-height: calc(90vh - 64px);
-    max-height: 600px;
-  }
+  ${breakpoint(
+    'min-desktop',
+    css`
+      min-height: calc(80vh - 64px);
+      max-height: unset;
+    `
+  )}
 `
 
 const BigScreamingLetters = styled.p`
@@ -63,35 +67,48 @@ const BigScreamingLetters = styled.p`
   text-align: center;
   margin: 0 0 18px;
   color: white;
+  font-size: 8rem;
+  margin: 0 0 9px;
 
-  @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
-    font-size: 8rem;
-    margin: 0 0 9px;
-  }
+  ${breakpoint(
+    'min-tablet',
+    css`
+      font-size: 18rem;
+      margin: 0 0 18px;
+    `
+  )}
 `
 
 const Status = styled.p`
-  font-size: 2rem;
-  line-height: 2.5rem;
-  letter-spacing: -1px;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  letter-spacing: 0;
   font-weight: 200;
-  margin: 0 0 48px;
+  margin: 0 0 24px;
   text-align: center;
   color: white;
 
-  @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
-    font-size: 1.5rem;
-    line-height: 2rem;
-    letter-spacing: 0;
-    margin: 0 0 24px;
-  }
+  ${breakpoint(
+    'min-tablet',
+    css`
+      font-size: 2rem;
+      line-height: 2.5rem;
+      letter-spacing: -1px;
+      margin: 0 0 48px;
+    `
+  )}
 
   strong {
     font-weight: 600;
     color: white;
-    @media (max-width: ${theme('fannypack.layout.tabletBreakpoint')}px) {
-      display: block;
-    }
+    display: block;
+
+    ${breakpoint(
+      'min-desktop',
+      css`
+        display: inline;
+      `
+    )}
   }
 `
 
@@ -105,18 +122,22 @@ const Button = styled.a`
   text-transform: uppercase;
   text-decoration: none;
   font-weight: 600;
-  font-size: 1rem;
   color: white;
+  width: 100%;
+  font-size: 0.875rem;
 
   &:hover {
     color: ${palette('danger')}
     background: white;
   }
 
-  @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
-    width: 100%;
-    font-size: 0.875rem;
-  }
+  ${breakpoint(
+    'min-tablet',
+    css`
+      font-size: 1rem;
+      width: unset;
+    `
+  )}
 
 `
 

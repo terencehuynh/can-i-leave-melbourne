@@ -1,5 +1,5 @@
 import React from 'react'
-import { Icon, styled, theme, palette } from 'fannypack'
+import { Icon, styled, css, breakpoint, palette } from 'bumbag'
 
 type ReasonCardItemProps = {
   name: string
@@ -12,16 +12,22 @@ export const ReasonsList = styled.ul`
   list-style: none;
   margin: 0 0 24px;
   padding: 0;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   grid-gap: 16px;
 
-  @media (max-width: ${theme('fannypack.layout.tabletBreakpoint')}px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  ${breakpoint(
+    'min-tablet',
+    css`
+      grid-template-columns: repeat(2, 1fr);
+    `
+  )}
 
-  @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
-    grid-template-columns: repeat(1, 1fr);
-  }
+  ${breakpoint(
+    'min-desktop',
+    css`
+      grid-template-columns: repeat(3, 1fr);
+    `
+  )}
 `
 
 const ReasonsCard = styled.li`
@@ -102,7 +108,7 @@ export const ReasonCardItem: React.FC<ReasonCardItemProps> = ({
     <ReasonsCard>
       <a href={link} target="_blank">
         <span className="icon">
-          <Icon icon={icon} a11yHidden={true} />
+          <Icon icon={icon} />
         </span>
         <p>{name}</p>
         <span className="read-more">Click for more info</span>

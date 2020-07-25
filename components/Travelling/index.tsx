@@ -1,5 +1,5 @@
 import React from 'react'
-import { Grid, styled, theme } from 'fannypack'
+import { Box, styled, css, breakpoint } from 'bumbag'
 
 import Location from './Location'
 import Tldr from '../Tldr'
@@ -11,26 +11,33 @@ export type TravellingProps = {
 }
 
 const Disclaimer = styled.p`
-  margin: 24px auto 0;
+  margin: 16px 0 0;
   font-size: 0.875rem;
   line-height: 1.5rem;
   opacity: 0.5;
-  text-align: center;
+  text-align: left;
   max-width: 800px;
 
-  @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
-    margin: 16px 0 0;
-    text-align: left;
-  }
+  ${breakpoint(
+    'min-tablet',
+    css`
+      margin: 24px auto 0;
+      text-align: center;
+    `
+  )}
 `
 
-const LocationsList = styled(Grid)<{}>`
-  grid-template-columns: repeat(2, 1fr);
+const LocationsList = styled(Box)`
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
   grid-gap: 10px;
 
-  @media (max-width: ${theme('fannypack.layout.tabletBreakpoint')}px) {
-    grid-template-columns: repeat(1, 1fr);
-  }
+  ${breakpoint(
+    'min-desktop',
+    css`
+      grid-template-columns: repeat(2, 1fr);
+    `
+  )}
 `
 
 const Travelling = ({ locations }: TravellingProps) => {

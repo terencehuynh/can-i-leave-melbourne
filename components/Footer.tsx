@@ -1,5 +1,5 @@
 import React from 'react'
-import { Icon, Link, styled, theme } from 'fannypack'
+import { Icon, Link as _Link, styled, breakpoint, css } from 'bumbag'
 
 import { Wrapper as _Wrapper, Container as _Container } from './Common'
 import FooterSocial from './FooterSocial'
@@ -10,12 +10,16 @@ const Wrapper = styled(_Wrapper)`
 
 const Container = styled(_Container)`
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: column;
+  align-items: center;
 
-  @media (max-width: ${theme('fannypack.layout.tabletBreakpoint')}px) {
-    flex-direction: column;
-    align-items: center;
-  }
+  ${breakpoint(
+    'min-desktop',
+    css`
+      align-items: unset;
+      flex-direction: row-reverse;
+    `
+  )}
 `
 
 const FooterCredits = styled.div`
@@ -24,11 +28,15 @@ const FooterCredits = styled.div`
     font-size: 0.875rem;
     font-weight: 400;
     color: #8190a2;
+    text-align: center;
     margin: 0;
 
-    @media (max-width: ${theme('fannypack.layout.tabletBreakpoint')}px) {
-      text-align: center;
-    }
+    ${breakpoint(
+      'min-desktop',
+      css`
+        text-align: left;
+      `
+    )}
 
     &:not(:last-child) {
       margin-bottom: 2px;
@@ -38,20 +46,20 @@ const FooterCredits = styled.div`
   p.long-divide {
     margin-top: 24px;
   }
+`
 
-  a {
-    font-weight: 600;
-    text-decoration: none;
-    color: #718196;
+const Link = styled(_Link)`
+  font-weight: 600;
+  text-decoration: none;
+  color: #718196;
+
+  &:hover {
+    text-decoration: underline;
   }
 
-  a svg {
+  svg {
     height: auto;
     margin-right: 4px;
-  }
-
-  a:hover {
-    text-decoration: underline;
   }
 `
 
@@ -64,7 +72,7 @@ const Footer = () => {
           <p>
             Built by <Link href="https://terencehuynh.com">Terence Huynh</Link>{' '}
             and made with{' '}
-            <Icon a11yLabel="love" icon="solid-heart" color="#e53935" /> in
+            <Icon label="love" icon="solid-heart" color="#e53935" /> in
             Melbourne, Australia
           </p>
           <p>
@@ -74,15 +82,15 @@ const Footer = () => {
             </Link>
           </p>
           <p>
-            Built with <Link href="https://fannypack.style">Fannypack</Link> and{' '}
+            Built with <Link href="https://bumbag.style">Bumbag</Link> and{' '}
             <Link href="https://nextjs.org/">Next.js</Link>
           </p>
           <p className="long-divide">
             Like this site? Consider{' '}
-            <a href="https://buymeacoffee.com/terencehuynh">
-              <Icon a11yHidden={true} icon="solid-coffee" />
+            <Link href="https://buymeacoffee.com/terencehuynh">
+              <Icon label="coffee mug" icon="solid-coffee" />
               buying me a coffee
-            </a>
+            </Link>
             .
           </p>
         </FooterCredits>

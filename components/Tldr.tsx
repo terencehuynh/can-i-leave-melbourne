@@ -1,15 +1,19 @@
 import React from 'react'
-import { styled, theme, palette } from 'fannypack'
+import { styled, breakpoint, css, palette } from 'bumbag'
 
 const Wrapper = styled.p`
   border: 1px solid #d0d0d0;
   padding: 16px;
   border-radius: 4px;
   display: flex;
+  flex-direction: column;
 
-  @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
-    flex-direction: column;
-  }
+  ${breakpoint(
+    'min-tablet',
+    css`
+      flex-direction: row;
+    `
+  )}
 `
 
 const Label = styled.strong`

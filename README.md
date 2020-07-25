@@ -6,8 +6,8 @@
 The name is pretty self-explanatory. But hey, if you wanted to check out the
 source code of the dumb creation I made, I guess here you go.
 
-This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0
-International License][cc-by-sa].
+The content (located in the `content` folder) is licensed under a [Creative
+Commons Attribution-ShareAlike 4.0 International License][cc-by-sa].
 
 [![CC BY-SA 4.0][cc-by-sa-image]][cc-by-sa]
 

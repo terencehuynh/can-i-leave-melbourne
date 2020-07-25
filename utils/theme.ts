@@ -19,7 +19,7 @@ import {
   faCreativeCommons,
 } from '@fortawesome/free-brands-svg-icons'
 
-import { ThemeConfig, PaletteThemeConfig } from 'fannypack/types'
+import { ThemeConfig, PaletteThemeConfig } from 'bumbag'
 
 interface CILMPaletteThemeConfig extends PaletteThemeConfig {
   yellow: string

@@ -1,11 +1,10 @@
 import React from 'react'
-import { styled, palette, css, Icon } from 'fannypack'
-import Hidden from 'reakit/Hidden'
+import { styled, palette, Icon, Disclosure, DisclosureProps } from 'bumbag'
 import ReactMarkdown from 'react-markdown'
 
 type VisibleProp = {
   visible: boolean
-  palette: string
+  baseColor: string
 }
 
 type LocationProps = {
@@ -17,45 +16,27 @@ type LocationProps = {
 const Wrapper = styled.div<VisibleProp>`
   border-radius: 4px;
   padding: 14px;
-  border: 2px solid ${(props) => palette(props.palette)};
-  background: ${(props) => palette(props.palette)};
-
-  ${(props) =>
-    props.visible &&
-    css`
-      background: white;
-      border: 2px solid ${palette(props.palette)};
-    `};
+  border: 2px solid ${(props) => props.baseColor};
+  background: ${(props) => (props.visible ? props.baseColor : 'white')};
 `
 
 const Header = styled.div<VisibleProp>`
   cursor: pointer;
   padding: 14px;
-  margin: -14px;
+  margin: ${(props) => (props.visible ? '-14px -14px 14px' : '-14px')};
   user-select: none;
-
-  ${(props) =>
-    props.visible &&
-    css`
-      border-bottom: 1px solid ${palette(props.palette)};
-      margin: -14px -14px 14px;
-    `};
-
-  h3 {
-    display: flex;
-    align-items: center;
-    margin: 0;
-    font-weight: 600;
-    line-height: 1.125rem;
-    font-size: 1rem;
-    color: white;
-
-    ${(props) =>
-      props.visible &&
-      css`
-        color: ${palette(props.palette)};
-      `}
-  }
+  display: block;
+  color: ${(props) => (props.visible ? props.baseColor : 'white')};
+  border-bottom-style: solid;
+  border-bottom-width: ${(props) => (props.visible ? '2px' : '0px')};
+  border-bottom-color: ${(props) =>
+    props.visible ? props.baseColor : 'unset'};
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  line-height: 1.125rem;
+  font-size: 1rem;
+  outline: none;
 
   svg {
     margin-right: 10px;
@@ -103,26 +84,35 @@ const LocationContent = styled.div`
 `
 
 const Location: React.FC<LocationProps> = ({ title, status, content }) => {
-  const palette = status === 'NO' ? 'danger' : 'success'
+  const disclosure = Disclosure.useState()
+  const baseColor: string =
+    status === 'NO'
+      ? ((palette('danger') as unknown) as string)
+      : ((palette('success') as unknown) as string)
   const icon = status === 'NO' ? 'solid-times-circle' : 'success'
+
   return (
-    <Hidden.Container>
-      {(hidden) => (
-        <Wrapper {...hidden} palette={palette}>
-          <Hidden.Toggle {...hidden} use={Header} palette={palette}>
-            <h3>
-              <Icon a11yLabel="Status" icon={icon} />
+    <>
+      <Wrapper {...disclosure} baseColor={baseColor}>
+        <Disclosure {...disclosure}>
+          {(props: DisclosureProps) => (
+            <Header
+              {...props}
+              visible={disclosure.visible}
+              baseColor={baseColor}
+            >
+              <Icon label="Status" icon={icon} />
               {title}
-            </h3>
-          </Hidden.Toggle>
-          <Hidden {...hidden}>
-            <LocationContent>
-              <ReactMarkdown source={content} />
-            </LocationContent>
-          </Hidden>
-        </Wrapper>
-      )}
-    </Hidden.Container>
+            </Header>
+          )}
+        </Disclosure>
+        <Disclosure.Content {...disclosure}>
+          <LocationContent>
+            <ReactMarkdown source={content} />
+          </LocationContent>
+        </Disclosure.Content>
+      </Wrapper>
+    </>
   )
 }
 

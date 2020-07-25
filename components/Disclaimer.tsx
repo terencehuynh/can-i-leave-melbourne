@@ -1,5 +1,5 @@
 import React from 'react'
-import { styled, palette, theme } from 'fannypack'
+import { styled, palette, breakpoint, css } from 'bumbag'
 import { Wrapper as _Wrapper, Container as _Container } from './Common'
 
 const Wrapper = styled(_Wrapper)`
@@ -14,12 +14,13 @@ const Container = styled(_Container)`
 
   p {
     margin: 0 0 16px;
-    text-align: center;
-    font-weight: 300;
-
-    @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
-      text-align: left;
-    }
+    text-align: left;
+    ${breakpoint(
+      'min-tablet',
+      css`
+        text-align: center;
+      `
+    )}
   }
 
   strong {

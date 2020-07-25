@@ -1,5 +1,5 @@
 import React from 'react'
-import { Icon, styled, palette, theme } from 'fannypack'
+import { Icon, styled, palette, breakpoint, css } from 'bumbag'
 
 const StyledLink = styled.a`
   background: ${palette('warningBg')};
@@ -7,8 +7,15 @@ const StyledLink = styled.a`
   display: flex;
   padding: 16px;
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 0.875rem;
   font-weight: 600;
+
+  ${breakpoint(
+    'min-tablet',
+    css`
+      font-size: 1rem;
+    `
+  )}
 
   &:hover {
     background: ${palette('warningHover')};
@@ -27,17 +34,13 @@ const StyledLink = styled.a`
     font-size: 16px;
     min-width: 16px;
   }
-
-  @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
-    font-size: 0.875rem;
-  }
 `
 
 const GovLink = () => {
   return (
     <StyledLink href="https://www.dhhs.vic.gov.au/coronavirus" target="_blank">
       <span>
-        <Icon a11yLabel="Disclaimer" icon="danger" size="16" />
+        <Icon label="Disclaimer" icon="danger" fontSize="16" />
         Click here for for up-to-date information about COVID-19 from the
         Victorian Government.
       </span>

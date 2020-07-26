@@ -34,15 +34,15 @@ const Container = styled(_Container)`
 `
 
 const Share = () => {
-  let _navigator: Navigator | null = null
+  const [navigator, setNavigator] = React.useState<Navigator | null>(null)
 
   React.useEffect(() => {
-    _navigator = navigator ?? null
+    setNavigator(window.navigator)
   }, [])
 
   const handleShare = async () => {
     const { title, desc: text, url } = SHARE_DATA
-    await _navigator?.share({ title, text, url })
+    await navigator?.share({ title, text, url })
   }
 
   const twitter = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
@@ -56,7 +56,7 @@ const Share = () => {
       <Container>
         <h2>Spread the word!</h2>
         <Set verticalBelow="tablet" isFilled={true}>
-          {!!_navigator && (
+          {!!navigator?.share && (
             <Button
               use="a"
               iconBefore="solid-share-alt"

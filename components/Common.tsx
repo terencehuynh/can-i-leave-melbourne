@@ -1,14 +1,25 @@
 import { Box, applyTheme, styled, breakpoint, css } from 'bumbag'
 
+export type WrapperProps = {
+  noHorizontal?: boolean
+  palette?: string
+}
+
+const WrapperPaddingHorizontal = {
+  default: '24px',
+  'min-tablet': '36px',
+  'min-desktop': '48px',
+}
+
 export const Wrapper = applyTheme(Box, {
   styles: {
-    base: {
-      padding: {
-        default: '24px 16px',
-        'min-tablet': '36px 16px',
-        'min-desktop': '48px 16px',
-      },
-    },
+    base: (props: WrapperProps) => ({
+      paddingTop: props.noHorizontal ? '0px' : WrapperPaddingHorizontal,
+      paddingBottom: props.noHorizontal ? '0px' : WrapperPaddingHorizontal,
+      paddingLeft: '16px',
+      paddingRight: '16px',
+      backgroundColor: props.palette,
+    }),
   },
 })
 

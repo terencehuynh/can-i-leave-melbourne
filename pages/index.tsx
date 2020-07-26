@@ -4,6 +4,7 @@ import GovLink from '../components/GovLink'
 import GoingOutside from '../components/GoingOutside'
 import Travelling from '../components/Travelling'
 import Disclaimer from '../components/Disclaimer'
+import Share from '../components/Share'
 import Footer from '../components/Footer'
 
 import { TRAVELLING_LIST } from '../constants'
@@ -22,6 +23,7 @@ const Home: React.FC<HomeProps> = ({ locations }) => {
       <GoingOutside />
       <Travelling locations={locations} />
       <Disclaimer />
+      <Share />
       <Footer />
     </>
   )

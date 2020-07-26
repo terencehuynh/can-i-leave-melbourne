@@ -1,26 +1,16 @@
 import React from 'react'
-import { styled, palette, breakpoint, css } from 'bumbag'
-import { Wrapper as _Wrapper, Container as _Container } from './Common'
-
-const Wrapper = styled(_Wrapper)`
-  background: ${palette('danger600')};
-`
+import { styled } from 'bumbag'
+import { Wrapper, Container as _Container } from './Common'
 
 const Container = styled(_Container)`
   h2,
   p {
     color: white;
+    text-align: left;
   }
 
   p {
     margin: 0 0 16px;
-    text-align: left;
-    ${breakpoint(
-      'min-tablet',
-      css`
-        text-align: center;
-      `
-    )}
   }
 
   strong {
@@ -34,7 +24,7 @@ const Container = styled(_Container)`
 
 const Disclaimer = () => {
   return (
-    <Wrapper>
+    <Wrapper palette="gray800">
       <Container>
         <h2>Disclaimer</h2>
         <p>

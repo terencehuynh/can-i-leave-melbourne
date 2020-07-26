@@ -10,6 +10,7 @@ import {
   faRing,
   faPlaceOfWorship,
   faExclamation,
+  faShareAlt,
 } from '@fortawesome/free-solid-svg-icons'
 import {
   faTwitter,
@@ -17,9 +18,10 @@ import {
   faLinkedinIn,
   faGithub,
   faCreativeCommons,
+  faFacebook,
 } from '@fortawesome/free-brands-svg-icons'
 
-import { ThemeConfig, PaletteThemeConfig } from 'bumbag'
+import { ThemeConfig, PaletteThemeConfig, ButtonProps } from 'bumbag'
 
 interface CILMPaletteThemeConfig extends PaletteThemeConfig {
   yellow: string
@@ -37,6 +39,25 @@ const theme: CILMThemeConfig = {
     warningBg: '#263238',
     warningHover: '#37474f',
   },
+  Button: {
+    variants: {
+      'inverted-outline': {
+        styles: {
+          base: {
+            border: '2px solid white',
+            color: 'white',
+            background: 'transparent',
+            letterSpacing: '1px',
+            textTransform: 'uppercase',
+          },
+          hover: (props: ButtonProps) => ({
+            background: 'white',
+            color: props.palette,
+          }),
+        },
+      },
+    },
+  },
   Icon: {
     iconSets: [
       {
@@ -52,6 +73,7 @@ const theme: CILMThemeConfig = {
           faRing,
           faPlaceOfWorship,
           faExclamation,
+          faShareAlt,
         ],
         prefix: 'solid-',
         type: 'font-awesome',
@@ -62,6 +84,7 @@ const theme: CILMThemeConfig = {
           faInstagram,
           faLinkedinIn,
           faGithub,
+          faFacebook,
           faCreativeCommons,
         ],
         prefix: 'brand-',

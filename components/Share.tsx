@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { styled, Button, Set, breakpoint, css } from 'bumbag'
 import {
   Wrapper as _Wrapper,
@@ -33,21 +33,16 @@ const Container = styled(_Container)`
   }
 `
 
-type ShareType = (data: ShareData) => Promise<void>
-
 const Share = () => {
-  const [share, setShare] = useState<ShareType | null>(null)
+  let _navigator: Navigator | null = null
 
-  // The hackest way to get this to work on next js
-  useEffect(() => {
-    const share = navigator?.share ?? null
-    setShare(share)
-  }, [])
+  React.useEffect(() => {
+    _navigator = navigator ?? null
+  })
 
   const handleShare = async () => {
-    if (!share) return null
     const { title, desc: text, url } = SHARE_DATA
-    await share({ title, text, url })
+    await _navigator?.share({ title, text, url })
   }
 
   const twitter = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
@@ -61,7 +56,7 @@ const Share = () => {
       <Container>
         <h2>Spread the word!</h2>
         <Set verticalBelow="tablet" isFilled={true}>
-          {!!share && (
+          {!!_navigator && (
             <Button
               use="a"
               iconBefore="solid-share-alt"

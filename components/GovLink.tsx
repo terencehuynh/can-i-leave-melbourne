@@ -38,7 +38,7 @@ const StyledLink = styled.a`
 
 const GovLink = () => {
   return (
-    <StyledLink href="https://www.dhhs.vic.gov.au/coronavirus" target="_blank">
+    <StyledLink href="https://vic.gov.au/coronavirus" target="_blank">
       <span>
         <Icon label="Disclaimer" icon="danger" fontSize="16" />
         Click here for for up-to-date information about COVID-19 from the

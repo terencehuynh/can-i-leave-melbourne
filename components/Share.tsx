@@ -38,7 +38,7 @@ const Share = () => {
 
   React.useEffect(() => {
     _navigator = navigator ?? null
-  })
+  }, [])
 
   const handleShare = async () => {
     const { title, desc: text, url } = SHARE_DATA

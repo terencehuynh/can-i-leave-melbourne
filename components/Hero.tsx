@@ -1,5 +1,5 @@
 import React from 'react'
-import { styled, palette, breakpoint, css } from 'bumbag'
+import { styled, breakpoint, css, Button } from 'bumbag'
 import { Container as _Container } from './Common'
 
 const Wrapper = styled.div`
@@ -112,24 +112,9 @@ const Status = styled.p`
   }
 `
 
-const Button = styled.a`
-  display: inline-block;
-  padding: 16px;
-  text-align: center;
-  border: 2px solid white;
-  line-height: 1rem;
-  border-radius: 4px;
-  text-transform: uppercase;
-  text-decoration: none;
-  font-weight: 600;
-  color: white;
+const StyledButton = styled(Button)`
   width: 100%;
   font-size: 0.875rem;
-
-  &:hover {
-    color: ${palette('danger')}
-    background: white;
-  }
 
   ${breakpoint(
     'min-tablet',
@@ -138,7 +123,6 @@ const Button = styled.a`
       width: unset;
     `
   )}
-
 `
 
 const Hero = () => {
@@ -152,7 +136,14 @@ const Hero = () => {
         <Status>
           Wear a mask. Wash your hands. <strong>Stay at home.</strong>
         </Status>
-        <Button href="#going-outside">Where can I go?</Button>
+        <StyledButton
+          use="a"
+          href="#going-outside"
+          variant="inverted-outline"
+          palette="danger"
+        >
+          Where can I go?
+        </StyledButton>
       </Container>
     </Wrapper>
   )

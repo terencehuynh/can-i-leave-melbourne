@@ -3,12 +3,14 @@ title: Adelaide and South Australia
 status: NO
 ---
 
-- You must complete a [cross border pre-approval form][form] at least 72 hours
-  before arriving in South Australia. Victorians on non-essential travel will be
-  rejected and are unable to enter South Australia.
+- From [Wednesday July 29][restrictions], you must be an essential traveller to
+  enter South Australia from Victoria. Anyone - including South Australian
+  residents - on non-essential travel will be blocked from entering.
 
-- Anyone arriving from Victoria will be required to quarantine for 14 days. You
-  will also need to undertake a test within 24 hours and 12 days after arriving.
+- If you are an essential traveller, you must complete a [cross border
+  pre-approval form][form] at least 72 hours before arriving in South Australia.
+  Upon arrival, you will be required to self-quarantine yourself for 14 days and
+  get tested.
 
 - A $1000 on-the-spot fine can be issued for breaching self-quarantine
   requirements.

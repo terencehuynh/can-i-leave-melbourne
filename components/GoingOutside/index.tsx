@@ -115,20 +115,20 @@ const GoingOutside = () => {
     }
   }, [])
 
-  return preselect ? (
+  return (
     <Wrapper>
       <Container>
         <h2 id="going-outside">Going outside?</h2>
-        <Tabs isFitted selectedId={preselect}>
+        <Paragraph>
+          These are the <strong>only reasons</strong> when you can leave
+          home:
+        </Paragraph>
+        {preselect && (<Tabs isFitted selectedId={preselect}>
           <StyledList variant="boxed">
             <StyledTab tabId="day">Between 5am - 8pm</StyledTab>
             <StyledTab tabId="night">Between 8pm - 5am</StyledTab>
           </StyledList>
           <Tabs.Panel tabId="day">
-            <Paragraph>
-              These are the <strong>only reasons</strong> when you can leave
-              home:
-            </Paragraph>
             <ReasonsList desktopGrid={2} tabletGrid={1}>
               <ReasonCardBigItem
                 icon="solid-shopping-bag"
@@ -203,7 +203,7 @@ const GoingOutside = () => {
               />
             </ReasonsList>
           </Tabs.Panel>
-        </Tabs>
+        </Tabs>)}
         <Paragraph>
           Otherwise, you must <strong>stay at home</strong>.
         </Paragraph>
@@ -217,7 +217,7 @@ const GoingOutside = () => {
         </Disclaimer>
       </Container>
     </Wrapper>
-  ) : null
+  )
 }
 
 export default GoingOutside

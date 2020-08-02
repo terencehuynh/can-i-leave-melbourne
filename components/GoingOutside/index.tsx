@@ -121,7 +121,7 @@ const GoingOutside = () => {
         <h2 id="going-outside">Going outside?</h2>
         <Paragraph>
           These are the <strong>only reasons</strong> when you can leave
-          home:
+          home.
         </Paragraph>
         {preselect && (<Tabs isFitted selectedId={preselect}>
           <StyledList variant="boxed">

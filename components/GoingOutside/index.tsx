@@ -43,6 +43,14 @@ const StyledTab = applyTheme(Tabs.Tab, {
   },
 })
 
+const StyledList = applyTheme(Tabs.List,{
+    styles: {
+      base: {
+        margin: { default: '0 0 24px', 'min-tablet': '0 0 36px' },
+      },
+    }
+})
+
 const Paragraph = styled.p`
   font-size: 1rem;
   line-height: 1.5rem;
@@ -112,10 +120,10 @@ const GoingOutside = () => {
       <Container>
         <h2 id="going-outside">Going outside?</h2>
         <Tabs isFitted selectedId={preselect}>
-          <Tabs.List variant="boxed">
+          <StyledList variant="boxed">
             <StyledTab tabId="day">Between 5am - 8pm</StyledTab>
             <StyledTab tabId="night">Between 8pm - 5am</StyledTab>
-          </Tabs.List>
+          </StyledList>
           <Tabs.Panel tabId="day">
             <Paragraph>
               These are the <strong>only reasons</strong> when you can leave

@@ -3,11 +3,23 @@ import { Icon, styled, css, breakpoint, palette } from 'bumbag'
 
 type ReasonCardItemProps = {
   name: string
-  link: string
+  link?: string
   icon: string
 }
 
-export const ReasonsList = styled.ul`
+type ReasonCardBigItemProps = {
+  title: string
+  children?: React.ReactNode
+  link?: string
+  icon: string
+}
+
+type ReasonsListProps = {
+  tabletGrid?: number
+  desktopGrid?: number
+}
+
+export const ReasonsList = styled.ul<ReasonsListProps>`
   display: grid;
   list-style: none;
   margin: 0 0 24px;
@@ -15,23 +27,24 @@ export const ReasonsList = styled.ul`
   grid-template-columns: repeat(1, 1fr);
   grid-gap: 16px;
 
-  ${breakpoint(
-    'min-tablet',
-    css`
-      grid-template-columns: repeat(2, 1fr);
-    `
-  )}
+  ${(props) =>
+    breakpoint(
+      'min-tablet',
+      css`
+        grid-template-columns: repeat(${props.tabletGrid || '2'}, 1fr);
+      `
+    )}
 
-  ${breakpoint(
-    'min-desktop',
-    css`
-      grid-template-columns: repeat(3, 1fr);
-    `
-  )}
+  ${(props) =>
+    breakpoint(
+      'min-desktop',
+      css`
+        grid-template-columns: repeat(${props.desktopGrid || '3'}, 1fr);
+      `
+    )}
 `
 
 const ReasonsCard = styled.li`
-  margin: 24px 0 0;
   border-radius: 4px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 8px 0px,
     rgba(0, 0, 0, 0.1) 0px 0px 0px 1px;
@@ -43,6 +56,10 @@ const ReasonsCard = styled.li`
   p {
     flex: 1;
     display: block;
+    margin: 0 0 12px;
+  }
+
+  p:last-child {
     margin: 0;
   }
 
@@ -57,14 +74,10 @@ const ReasonsCard = styled.li`
   }
 
   span.icon {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: -24px;
     display: flex;
     font-size: 1.5rem;
     line-height: 48px;
-    margin: 0 auto;
+    margin: 0 auto 12px;
     color: white;
     background: ${palette('info300')};
     width: 48px;
@@ -79,8 +92,7 @@ const ReasonsCard = styled.li`
     display: flex;
     flex: 1;
     flex-direction: column;
-    border-top: 5px solid ${palette('info300')};
-    padding: calc(8px + 24px) 16px 16px;
+    padding: 16px;
     text-decoration: none;
     font-size: 1rem;
     text-align: center;
@@ -97,21 +109,46 @@ const ReasonsCard = styled.li`
       color: ${palette('info600')};
     }
   }
+
+  h3 {
+    font-weight: 700;
+    margin: 0 0 12px;
+  }
 `
+
+export const ReasonCardBigItem: React.FC<ReasonCardBigItemProps> = ({
+  icon,
+  title,
+  children,
+  link,
+}) => {
+  return (
+    <ReasonsCard>
+      <a href={link ?? '#'} target="_blank">
+        <span className="icon">
+          <Icon icon={icon} />
+        </span>
+        <h3>{title}</h3>
+        {children}
+        {link && <span className="read-more">Click for more info</span>}
+      </a>
+    </ReasonsCard>
+  )
+}
 
 export const ReasonCardItem: React.FC<ReasonCardItemProps> = ({
   icon,
   name,
-  link = '#',
+  link,
 }) => {
   return (
     <ReasonsCard>
-      <a href={link} target="_blank">
+      <a href={link ?? '#'} target="_blank">
         <span className="icon">
           <Icon icon={icon} />
         </span>
         <p>{name}</p>
-        <span className="read-more">Click for more info</span>
+        {link && <span className="read-more">Click for more info</span>}
       </a>
     </ReasonsCard>
   )

@@ -58,6 +58,15 @@ const theme: CILMThemeConfig = {
       },
     },
   },
+  Tabs: {
+    List: {
+      styles: {
+        base: {
+          margin: { default: '0 0 24px', 'min-tablet': '0 0 36px' },
+        },
+      },
+    },
+  },
   Icon: {
     iconSets: [
       {

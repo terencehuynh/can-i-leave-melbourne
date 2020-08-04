@@ -43,12 +43,12 @@ const StyledTab = applyTheme(Tabs.Tab, {
   },
 })
 
-const StyledList = applyTheme(Tabs.List,{
-    styles: {
-      base: {
-        margin: { default: '0 0 24px', 'min-tablet': '0 0 36px' },
-      },
-    }
+const StyledList = applyTheme(Tabs.List, {
+  styles: {
+    base: {
+      margin: { default: '0 0 24px', 'min-tablet': '0 0 36px' },
+    },
+  },
 })
 
 const Paragraph = styled.p`
@@ -120,100 +120,131 @@ const GoingOutside = () => {
       <Container>
         <h2 id="going-outside">Going outside?</h2>
         <Paragraph>
-          These are the <strong>only reasons</strong> when you can leave
-          home.
+          These are the <strong>only reasons</strong> when you can leave home.
         </Paragraph>
-        {preselect && (<Tabs isFitted selectedId={preselect}>
-          <StyledList variant="boxed">
-            <StyledTab tabId="day">Between 5am - 8pm</StyledTab>
-            <StyledTab tabId="night">Between 8pm - 5am</StyledTab>
-          </StyledList>
-          <Tabs.Panel tabId="day">
-            <ReasonsList desktopGrid={2} tabletGrid={1}>
-              <ReasonCardBigItem
-                icon="solid-shopping-bag"
-                title="Shopping for food and essentials"
-                link="https://www.vic.gov.au/coronavirus-covid-19-restrictions-victoria"
-              >
-                <p>
-                  Must be within 5km from your home, or at the nearest available
-                  supermarket.
-                </p>
-                <p>
-                  Only one member of your household can leave to get supplies.
-                </p>
-                <p>Each household can only leave for supplies once per day</p>
-              </ReasonCardBigItem>
-              <ReasonCardBigItem
-                icon="solid-running"
-                title="Exercise"
-                link="https://www.vic.gov.au/coronavirus-covid-19-restrictions-victoria"
-              >
-                <p>Must be within 5km from your home.</p>
-                <p>Limited to one hour, once per day.</p>
-                <p>
-                  Max group size of two people (unless with young children or
-                  at-risk people that cannot be left at home)
-                </p>
-              </ReasonCardBigItem>
-            </ReasonsList>
-            <ReasonsList>
-              <ReasonCardItem
-                icon="solid-briefcase"
-                name="Work, if you cannot do so from home"
-              />
-              <ReasonCardItem
-                icon="solid-clinic-medical"
-                name="Access medical services, or visiting a doctor or health professional"
-              />
-              <ReasonCardItem
-                icon="solid-place-of-worship"
-                name="Attending a funeral (whilst maintaining social distancing)"
-              />
-              <ReasonCardItem
-                icon="solid-hands-helping"
-                name="Providing caregiving or on compassionate reasons"
-              />
-              <ReasonCardItem
-                icon="solid-exclamation"
-                name="When your life is in danger, or it is an emergency"
-              />
-            </ReasonsList>
-          </Tabs.Panel>
-          <Tabs.Panel tabId="night">
-            <CurfewAlert variant="fill" title="Curfew in place">
-              You can only leave for the following reasons outlined below.
-            </CurfewAlert>
-            <ReasonsList desktopGrid={2}>
-              <ReasonCardItem
-                icon="solid-briefcase"
-                name="Work, if you cannot do so from home"
-              />
-              <ReasonCardItem
-                icon="solid-clinic-medical"
-                name="Access medical services"
-              />
-              <ReasonCardItem
-                icon="solid-hands-helping"
-                name="Providing caregiving or on compassionate reasons"
-              />
-              <ReasonCardItem
-                icon="solid-exclamation"
-                name="When your life is in danger, or it is an emergency"
-              />
-            </ReasonsList>
-          </Tabs.Panel>
-        </Tabs>)}
+        {preselect && (
+          <Tabs isFitted selectedId={preselect}>
+            <StyledList variant="boxed">
+              <StyledTab tabId="day">Between 5am - 8pm</StyledTab>
+              <StyledTab tabId="night">Between 8pm - 5am</StyledTab>
+            </StyledList>
+            <Tabs.Panel tabId="day">
+              <ReasonsList desktopGrid={2} tabletGrid={1}>
+                <ReasonCardBigItem
+                  icon="solid-shopping-bag"
+                  title="Shopping for food and essentials"
+                  link="https://www.dhhs.vic.gov.au/stage-4-restrictions-covid-19#necessary-goods-and-services"
+                >
+                  <p>
+                    Must be within 5km from your home, or at the nearest
+                    available supermarket.
+                  </p>
+                  <p>
+                    Only one member of your household can leave to get supplies.
+                  </p>
+                  <p>Each household can only leave for supplies once per day</p>
+                </ReasonCardBigItem>
+                <ReasonCardBigItem
+                  icon="solid-running"
+                  title="Exercise"
+                  link="https://www.dhhs.vic.gov.au/stage-4-restrictions-covid-19#exercise"
+                >
+                  <p>Must be within 5km from your home.</p>
+                  <p>Limited to one hour, once per day.</p>
+                  <p>
+                    Max group size of two people (unless with young children or
+                    at-risk people that cannot be left at home)
+                  </p>
+                </ReasonCardBigItem>
+              </ReasonsList>
+              <ReasonsList>
+                <ReasonCardItem
+                  icon="solid-briefcase"
+                  name="Work, if you cannot do so from home"
+                  link="https://www.vic.gov.au/coronavirus-covid-19-restrictions-victoria#announcement-on-how-stage-4-restrictions-affect-businesses-and-workplaces"
+                />
+                <ReasonCardItem
+                  icon="solid-clinic-medical"
+                  name="Access medical services, or visiting a doctor or health professional"
+                  link="https://www.dhhs.vic.gov.au/stage-4-restrictions-covid-19#care-and-health-care"
+                />
+                <ReasonCardItem
+                  icon="solid-paw"
+                  name="Take your pet to the vet, or for a bathroom break (near your home)"
+                  link="https://www.dhhs.vic.gov.au/stage-4-restrictions-covid-19#i-live-in-an-apartment-am-i-allowed-to-take-my-dog-out-for-a-bathroom-break-more-than-once-a-day"
+                />
+                <ReasonCardItem
+                  icon="solid-place-of-worship"
+                  name="Attending a funeral (whilst maintaining social distancing)"
+                  link="https://www.dhhs.vic.gov.au/stage-4-restrictions-covid-19#i-live-in-metropolitan-melbourne--can-i-attend-a-funeral"
+                />
+                <ReasonCardItem
+                  icon="solid-heart"
+                  name="Visiting someone who you are in an intimate personal relationship"
+                  link="https://www.dhhs.vic.gov.au/stage-4-restrictions-covid-19#can-i-still-visit-my-partner"
+                />
+                <ReasonCardItem
+                  icon="solid-syringe"
+                  name="Donate blood"
+                  link="https://www.lifeblood.com.au/coronavirus-update"
+                />
+                <ReasonCardItem
+                  icon="solid-hands-helping"
+                  name="Providing caregiving (including child support) or on compassionate reasons"
+                />
+                <ReasonCardItem
+                  icon="solid-exclamation"
+                  name="When your life is in danger, or it is an emergency"
+                />
+              </ReasonsList>
+            </Tabs.Panel>
+            <Tabs.Panel tabId="night">
+              <CurfewAlert variant="fill" title="Curfew in place">
+                You can only leave for the following reasons outlined below.
+              </CurfewAlert>
+              <ReasonsList>
+                <ReasonCardItem
+                  icon="solid-briefcase"
+                  name="Work, if you cannot do so from home"
+                  link="https://www.vic.gov.au/coronavirus-covid-19-restrictions-victoria#announcement-on-how-stage-4-restrictions-affect-businesses-and-workplaces"
+                />
+                <ReasonCardItem
+                  icon="solid-clinic-medical"
+                  name="Access medical services"
+                  link="https://www.dhhs.vic.gov.au/stage-4-restrictions-covid-19#care-and-health-care"
+                />
+                <ReasonCardItem
+                  icon="solid-heart"
+                  name="Visiting someone who you are in an intimate personal relationship"
+                  link="https://www.dhhs.vic.gov.au/stage-4-restrictions-covid-19#can-i-still-visit-my-partner"
+                />
+                <ReasonCardItem
+                  icon="solid-paw"
+                  name="Take your pet for a bathroom break (near your home)"
+                  link="https://www.dhhs.vic.gov.au/stage-4-restrictions-covid-19#i-live-in-an-apartment-am-i-allowed-to-take-my-dog-out-for-a-bathroom-break-more-than-once-a-day"
+                />
+                <ReasonCardItem
+                  icon="solid-hands-helping"
+                  name="Providing caregiving (including child support) or on compassionate reasons"
+                />
+                <ReasonCardItem
+                  icon="solid-exclamation"
+                  name="When your life is in danger, or it is an emergency"
+                />
+              </ReasonsList>
+            </Tabs.Panel>
+          </Tabs>
+        )}
         <Paragraph>
           Otherwise, you must <strong>stay at home</strong>.
         </Paragraph>
         <Disclaimer>
-          The Department of Health and Human Services website has not been
-          updated with the latest directions. The following information comes
-          from the{' '}
-          <Link href="https://twitter.com/DanielAndrewsMP/status/1289795907186122752">
-            State Government's press release.
-          </Link>
+          Not all reasons are listed here. The full exhaustive list of allowed
+          reasons to leave your house can be found in the{' '}
+          <Link href="https://www.dhhs.vic.gov.au/sites/default/files/documents/202008/Stay%20at%20Home%20Directions%20%28Restricted%20Areas%29%20%28No%207%29%20-%202%20August%202020.pdf">
+            Stay at Home Directions (Restricted Areas) (No 7)
+          </Link>{' '}
+          issued by the Department of Health and Human Services.
         </Disclaimer>
       </Container>
     </Wrapper>

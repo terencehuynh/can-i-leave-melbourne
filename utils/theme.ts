@@ -11,6 +11,8 @@ import {
   faPlaceOfWorship,
   faExclamation,
   faShareAlt,
+  faSyringe,
+  faPaw,
 } from '@fortawesome/free-solid-svg-icons'
 import {
   faTwitter,
@@ -74,6 +76,8 @@ const theme: CILMThemeConfig = {
           faPlaceOfWorship,
           faExclamation,
           faShareAlt,
+          faSyringe,
+          faPaw,
         ],
         prefix: 'solid-',
         type: 'font-awesome',

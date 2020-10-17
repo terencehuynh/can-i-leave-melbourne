@@ -19,7 +19,7 @@ Commons Attribution-ShareAlike 4.0 International License][cc-by-sa].
   [Department of Health and Human Services](https://www.dhhs.vic.gov.au/coronavirus)
   for the latest information about COVID-19 in Victoria.
 
-- **Legal advice**: I am not a layer. If you find yourself in trouble, this
+- **Legal advice**: I am not a lawyer. If you find yourself in trouble, this
   website is not the same as asking a lawyer or getting legal advice from legal
   aid. This is just a dumb website.
 

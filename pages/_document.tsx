@@ -1,4 +1,5 @@
 import Document, {
+  Html, 
   Head,
   Main,
   NextScript,
@@ -26,7 +27,7 @@ export default class MyDocument extends Document {
 
   render() {
     return (
-      <html lang="en">
+      <Html lang="en">
         <Head key="head-in-doc">
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
           <title>Can I Leave Melbourne?</title>
@@ -60,7 +61,7 @@ export default class MyDocument extends Document {
           <Main />
           <NextScript />
         </body>
-      </html>
+      </Html>
     )
   }
 }

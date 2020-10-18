@@ -16,3 +16,4 @@ export const SHARE_DATA = {
   desc: 'Wear a mask. Wash your hands. Stay at home.',
   tag: '@terencehuynh',
 }
+

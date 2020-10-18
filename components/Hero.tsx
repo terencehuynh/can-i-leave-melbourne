@@ -78,6 +78,17 @@ const BigScreamingLetters = styled.p`
     `
   )}
 `
+const LastUpdated = styled.p`
+  font-size: 1rem;
+  line-height: 1.5rem;
+  letter-spacing: 0;
+  font-weight: 150;
+  margin: 0 10 24px;
+  text-align: center;
+  color: white;
+    
+
+`
 
 const Status = styled.p`
   font-size: 1.5rem;
@@ -125,6 +136,10 @@ const StyledButton = styled(Button)`
   )}
 `
 
+let date = new Date()
+let month = date.getMonth() + 1
+let updatedDate = date.getDate() + "/" + month + "/" + date.getFullYear() 
+
 const Hero = () => {
   return (
     <Wrapper>
@@ -144,6 +159,7 @@ const Hero = () => {
         >
           Where can I go?
         </StyledButton>
+        <LastUpdated> Last Updated: {updatedDate} </LastUpdated>
       </Container>
     </Wrapper>
   )
